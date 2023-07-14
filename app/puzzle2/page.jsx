@@ -30,16 +30,17 @@ export default function EscapeRoom2() {
       <p>Willkommen im zweiten Raum. Um zu entkommen, musst du das Rätsel lösen.</p>
       <br/>
       <p>
-        Ich bin immer da, wenn das Licht auf mich fällt,
-        Doch verschwinde ich, wenn die Dunkelheit schnellt.
-        Du kannst mich sehen, doch ich bin nicht real,
-        Bin weder Gegenstand noch ein Lebewesen fatal.
+        Ich bin immer da, wenn das Licht auf mich fällt,<br/>
+        doch verschwinde ich, wenn die Dunkelheit schnellt.<br/>
+        du kannst mich sehen, doch ich bin nicht real,<br/>
+        bin weder Gegenstand noch ein Lebewesen fatal.<br/><br/>
 
-        Mein Name ist das Geheimnis, das du entdecken musst,
-        Löse dieses Rätsel und finde den Ausgang bewusst.
-        Ein einziges Wort, das alles offenbart,
-        Die Lösung des Rätsels, die dich befreit und bewahrt.
+        Mein Name ist das Geheimnis, das du entdecken musst,<br/>
+        löse dieses Rätsel und finde den Ausgang bewusst.<br/>
+        ein einziges Wort, das alles offenbart,<br/>
+        die Lösung des Rätsels, die dich befreit und bewahrt.<br/>
         </p>
+        <br/>
       {!showSolution ? (
         <div>
           <p>Finde das richtige Wort und tippe es hier ein:</p>
