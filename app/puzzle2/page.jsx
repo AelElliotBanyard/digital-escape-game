@@ -28,11 +28,22 @@ export default function EscapeRoom2() {
     <div>
       <h1>Escape-Room Rätsel 2</h1>
       <p>Willkommen im zweiten Raum. Um zu entkommen, musst du das Rätsel lösen.</p>
-      <br />
+      <br/>
+      <p>
+        Ich bin immer da, wenn das Licht auf mich fällt,
+        Doch verschwinde ich, wenn die Dunkelheit schnellt.
+        Du kannst mich sehen, doch ich bin nicht real,
+        Bin weder Gegenstand noch ein Lebewesen fatal.
+
+        Mein Name ist das Geheimnis, das du entdecken musst,
+        Löse dieses Rätsel und finde den Ausgang bewusst.
+        Ein einziges Wort, das alles offenbart,
+        Die Lösung des Rätsels, die dich befreit und bewahrt.
+        </p>
       {!showSolution ? (
         <div>
           <p>Finde das richtige Wort und tippe es hier ein:</p>
-          <input type="text" value={clue} onChange={handleClueChange} />
+          <input type="text" value={clue} onChange={handleClueChange} style={{ color: 'black' }}/>
           <button onClick={checkSolution}>Überprüfen</button>
         </div>
       ) : (
