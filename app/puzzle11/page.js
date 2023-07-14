@@ -1,6 +1,8 @@
 'use client'
+import { useRouter } from "next/navigation";
 
 export default function page() {
+  const router = useRouter();
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-10">
       <h1 className="text-4xl font-bold">Sandcat Rätsel 11</h1>
@@ -19,7 +21,7 @@ export default function page() {
           onChange={e => {
             const solutions = ['ratsel', 'rätsel', 'puzzle']
             const txt = e.target.value.toLowerCase();
-            solutions.find(v => v === txt) ? console.log('CAAT') /* <- replace with redirect to next puzzle */ : void 0;
+            solutions.find(v => v === txt) ? router.push('/puzzle12') : void 0;
           }}
         />
       </div>
