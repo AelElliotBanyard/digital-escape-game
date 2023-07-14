@@ -58,6 +58,7 @@ const router = useRouter();
           <button type="submit" className='border border-slate-300'>Submit</button>
         </form>
         {errorMessage && <p className='text-red-500'>{errorMessage}</p>}
+        <br />
         {showSuccessMessage && <p>Deine Antwort ist Richtig!</p> &&
         <button className='border border-slate-300' onClick={() => router.push("/puzzle4")}>Next</button>}
         <br />
