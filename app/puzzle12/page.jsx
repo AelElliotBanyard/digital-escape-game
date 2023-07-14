@@ -1,10 +1,12 @@
 'use client'
 import React from "react";
 import { useState } from 'react';
+import { useRouter } from "next/navigation";
 
 const page = () => {
   const result = "WINDRAD";
   const [input, setInput] = useState(''); 
+  const router = useRouter()
 
   const check = (e) => {
     if (input.toUpperCase() === result) {
@@ -29,7 +31,8 @@ const page = () => {
         <p>Man kann mich am Himmel sehen.</p>
       </div>
       <input type="text" className="rounded border-white border-2 bg-transparent" value={input} onChange={(e) => setInput(e.target.value)} />
-      <button className="border-2 border-red-800 rounded p-2" onClick={check}>Check</button>
+      <button className="border-2 border-green-700 rounded p-2" onClick={check}>Check</button>
+      <button className="absolute bottom-40 right-40 border-2 border-white p-2 pl-5 pr-5 text-2xl rounded" onClick={() => router.replace("/")}>End</button>
     </div>
   );
 };
