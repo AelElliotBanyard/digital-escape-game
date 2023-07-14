@@ -1,9 +1,12 @@
 "use client"    
 import { useState } from 'react';
+import { useRouter } from 'next/router';
+
 
 const Page = () => {
   const [answer, setAnswer] = useState('');
   const [isCorrect, setIsCorrect] = useState(false);
+  const router = useRouter()
 
   const checkAnswer = () => {
     if (answer.toLowerCase() === 'spiegel') {
@@ -40,7 +43,7 @@ const Page = () => {
         <p className="text-center mt-4">
           Richtige Antwort! Du kannst fortfahren.
           <br />
-          <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">
+          <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700" onClick={router.push("/puzzle2")}>
             NEXT
           </button>
         </p>
