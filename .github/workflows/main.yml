@@ -25,3 +25,19 @@ jobs:
           local_path: "./*"
           remote_path: "/home/github/escape"
           sftpArgs: "-o ConnectTimeout=5"
+  deploy:
+    name: Start docker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.SSH_SERVER }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            cd /home/github/escape
+            docker build -t escape .
+            docker stop escape-container
+            docker start --name escape-container -p 3031:3000 -d escape:latest
