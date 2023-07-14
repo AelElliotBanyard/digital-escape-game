@@ -23,5 +23,5 @@ jobs:
           server: ${{ secrets.SSH_SERVER }}
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           local_path: "./*"
-          remote_path: "~/escape"
+          remote_path: "/escape"
           sftpArgs: "-o ConnectTimeout=5"
