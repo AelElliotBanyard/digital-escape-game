@@ -13,7 +13,7 @@ export default function Puzzle7() {
     event.preventDefault();
     if (value.toLowerCase() === 'taschenlampe') {
       alert('Correct answer!');
-      router.push('/nextPuzzlePage');
+      router.push('/puzzle8');
     } else {
       alert('Wrong answer, please try again.');
     }
