@@ -25,7 +25,7 @@ function Timer() {
   }, [time, countdown]);
 
   const startCountdown = () => {
-    setTime(10);
+    setTime(900);
     setCountdown(true);
   };
 
