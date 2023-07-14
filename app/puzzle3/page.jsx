@@ -1,4 +1,5 @@
 'use client'
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
 export default function Wind() {
@@ -6,10 +7,13 @@ export default function Wind() {
   const correctAnswer = 'Wind';
   const [errorMessage, setErrorMessage] = useState('');
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+const router = useRouter();
 
   const handleAnswerChange = (e) => {
     setAnswer(e.target.value);
   };
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,6 +26,8 @@ export default function Wind() {
       setShowSuccessMessage('');
     }
   };
+
+  
 
   return (
     <>
@@ -52,7 +58,9 @@ export default function Wind() {
           <button type="submit" className='border border-slate-300'>Submit</button>
         </form>
         {errorMessage && <p className='text-red-500'>{errorMessage}</p>}
-        {showSuccessMessage && <p>Deine Antwort ist Richtig!</p>}
+        {showSuccessMessage && <p>Deine Antwort ist Richtig!</p> &&
+        <button className='border border-slate-300' onClick={() => router.push("/puzzle4")}>Next</button>}
+        <br />
       </div>
     </>
   );
