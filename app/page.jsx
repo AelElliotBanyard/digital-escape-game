@@ -7,7 +7,7 @@ const page = () => {
   return (
     <div className="flex flex-col justify-center items-center h-screen w-screen">
       <h1 className="font-bold text-4xl mb-10">Escape Room</h1>
-      <div className="flex flex-col gap-2">
+      <div className="grid grid-cols-12 gap-2">
         <button className="border-2 border-white p-3" onClick={() => router.replace('/puzzle1')}>Puzzle1</button>
         <button className="border-2 border-white p-3" onClick={() => router.replace('/puzzle2')}>Puzzle 2</button>
         <button className="border-2 border-white p-3" onClick={() => router.replace('/puzzle3')}>Puzzle 3</button>
