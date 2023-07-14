@@ -1,12 +1,15 @@
 "use client"
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 const HospitalRiddlePage = () => {
   const [answer, setAnswer] = useState('');
-  const [isCorrect, setIsCorrect] = useState(false);
+  const [isCorrect, setIsCorrect] = useState(null); // Setze den Anfangswert auf null
+  const router = useRouter();
 
   const handleInputChange = (e) => {
     setAnswer(e.target.value);
+    setIsCorrect(null); // Setze die Antwortanzeige auf null, wenn eine neue Eingabe gemacht wird
   };
 
   const checkAnswer = (e) => {
@@ -14,6 +17,7 @@ const HospitalRiddlePage = () => {
     const correctAnswer = 'Krankenhaus';
     if (answer.toLowerCase() === correctAnswer.toLowerCase()) {
       setIsCorrect(true);
+      router.push('/puzzle6'); // Weiterleitung zur Seite "Puzzle6"
     } else {
       setIsCorrect(false);
     }
@@ -39,10 +43,8 @@ const HospitalRiddlePage = () => {
         />
         <button type="submit" style={{ marginLeft: '10px', fontSize: '16px' }}>Antwort überprüfen</button>
       </form>
-      {isCorrect && <p style={{ fontSize: '18px', color: 'green', marginTop: '20px' }}>Herzlichen Glückwunsch! Die Antwort ist richtig!</p>}
-      {isCorrect === false && isCorrect !== null && (
-        <p style={{ fontSize: '18px', color: 'red', marginTop: '20px' }}>Leider ist die Antwort falsch. Versuche es erneut.</p>
-      )}
+      {isCorrect === true && <p style={{ fontSize: '18px', color: 'green', marginTop: '20px' }}>Herzlichen Glückwunsch! Die Antwort ist richtig!</p>}
+      {isCorrect === false && <p style={{ fontSize: '18px', color: 'red', marginTop: '20px' }}>Leider ist die Antwort falsch. Versuche es erneut.</p>}
     </div>
   );
 };
